@@ -1,6 +1,6 @@
 ## The new waitlist landing page
 
-The full page is designed on its own canvas, built from the Lotus design language (Inter, DDS colors, the onboarding card illustration) with real screens from the flow. **[Open the landing page design →](https://claude.ai/artifact/C4mmh1oitDopuMyE27WWme)**
+The full page is designed on its own canvas, built from the Lotus design language (Inter, DDS colors, the onboarding card illustration) with real screens from the flow. **[Open the landing page design →](/waitlist-landing-page)**
 
 ![The top of the new landing page](img:landing_thumb)
 
