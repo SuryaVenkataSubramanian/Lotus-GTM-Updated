@@ -1,6 +1,6 @@
 ## The waitlist landing page
 
-The full page is designed on its own canvas in the Lotus design language (Inter, Document360 purple, the onboarding card illustration), with the GradientASCII animation in the hero. **[Open the landing page design →](https://claude.ai/artifact/C4mmh1oitDopuMyE27WWme)**. The animated version is also at `/landing` in the GitHub repo.
+The full page is designed on its own canvas in the Lotus design language (Inter, Document360 purple, the onboarding card illustration), with the GradientASCII animation in the hero. **[Open the landing page design →](/waitlist-landing-page)**. The animated version is also at `/landing` in the GitHub repo.
 
 ![The top of the landing page](img:landing_thumb)
 

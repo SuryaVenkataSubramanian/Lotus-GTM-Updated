@@ -32,7 +32,7 @@ A = [
  ("strategy", "Positioning and message house", "strategy", "plan", "Internal", "Marketing team",
   "Positioning statement, message house, audiences in order and the four strategic moves.", "strategy.md", None, None, None, "strategy_thumb"),
  ("landing", "Waitlist landing page", "content", "base", "Website", "All audiences",
-  "The new docs-as-code landing page: hero, how it works, features, extension comparison and FAQ.", "landing.md", "https://claude.ai/artifact/C4mmh1oitDopuMyE27WWme", "Open the landing page design", None, "landing_thumb"),
+  "The new docs-as-code landing page: hero, how it works, features, extension comparison and FAQ.", "landing.md", "/waitlist-landing-page", "Open the landing page design", None, "landing_thumb"),
  ("blog", "SEO blog: docs as code", "content", "base", "Blog, search", "Docs teams, developers, PMs",
   "SEO brief and the full ~1,600-word article with screenshots, checklist and FAQ.", "blog.md", None, None, None, "herobare"),
  ("widgets", "Blog sidebar widgets", "content", "base", "document360.com/blog", "Blog readers",
@@ -355,7 +355,7 @@ JS = r"""
   }
   function post(root){
     root.querySelectorAll('table').forEach(function(t){ if(t.parentNode.classList.contains('table-wrap')) return; var w=document.createElement('div'); w.className='table-wrap'; t.parentNode.insertBefore(w,t); w.appendChild(t); });
-    root.querySelectorAll('a[href^="http"]').forEach(function(a){ a.target='_blank'; a.rel='noopener'; });
+    root.querySelectorAll('a[href^="http"],a[href^="/"]').forEach(function(a){ a.target='_blank'; a.rel='noopener'; });
     root.querySelectorAll('p > img[alt]').forEach(function(im){ if(im.closest('.wdg,.pmk')) return; var c=document.createElement('span'); c.className='cap'; c.textContent=im.alt; im.after(c); im.loading='lazy'; });
     fillImgs(root);
   }

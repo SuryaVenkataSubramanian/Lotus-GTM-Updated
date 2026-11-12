@@ -10,6 +10,7 @@ This repository is the complete go-to-market kit for Document360 Lotus, the docs
 | --- | --- |
 | `/` | GTM command center: 22 launch assets, filters by type and phase, search, and the full resource in a pop-up |
 | `/landing` | Waitlist landing page with the GradientASCII hero animation and the Document360 ⟷ Lotus ⟷ GitHub visual |
+| `/waitlist-landing-page` | Full waitlist landing page design (opened from "Open the landing page design" in the command center) |
 | `/newsletters/lotus-newsletter-existing-customers` | Customer newsletter (HTML for Ortto) |
 | `/newsletters/lotus-newsletter-trial-demo-leads` | Trial and demo leads newsletter (HTML for Ortto) |
 
