@@ -10,6 +10,8 @@ INK = "#0d0824"; INDIGO = "#2A1AB9"; TEXT = "#1a1d33"; BODY = "#4a4e66"; MUTED =
 
 with open(os.path.join(OUT, "lotus-banner.png"), "rb") as fh:
     BANNER = "data:image/png;base64," + base64.b64encode(fh.read()).decode()
+with open(os.path.join(OUT, "document360-logo.png"), "rb") as fh:
+    LOGO = "data:image/png;base64," + base64.b64encode(fh.read()).decode()
 
 HEAD = """<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!--
@@ -19,8 +21,8 @@ HEAD = """<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http:/
   Alt subject:  @@ALTSUBJECT@@
   Preheader:    @@PREHEADER@@
 
-  BEFORE SENDING: upload lotus-banner.png to Ortto's image library and replace the src of
-  the image marked BANNER IMAGE below with the hosted URL. The embedded copy is only there
+  BEFORE SENDING: upload lotus-banner.png and document360-logo.png to Ortto's image library and
+  replace the src of the images marked BANNER IMAGE and LOGO IMAGE below with the hosted URLs. The embedded copy is only there
   so the file previews correctly in a browser.
 -->
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
@@ -97,7 +99,7 @@ def hero(eyebrow, kicker, title, sub, key, micro):
                 <td class="px" style="padding:26px 32px 0 32px;">
                   <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                     <tr>
-                      <td style="{F} font-size:16px; font-weight:800; color:#18181b;">Document360</td>
+                      <td><!-- LOGO IMAGE: replace src with your hosted document360-logo.png URL in Ortto --><img src="{LOGO}" width="150" height="19" alt="Document360" style="display:block; width:150px; height:auto; border:0; {F} font-size:16px; font-weight:800; color:#6941c6;" /></td>
                       <td align="right" style="{F} font-size:12px; font-weight:600; color:#4c3482;">{eyebrow}</td>
                     </tr>
                   </table>
@@ -279,7 +281,7 @@ ML = "Be among the first to experience it. Early access spots are limited."
 MC = "Be among the first customers to experience it. Early access spots are limited."
 
 leads = (
-    hero("Early access", "Introducing Document360 Lotus", "Docs as code.<br /><span style=\"color:#7f56d9;\">Synced both ways.</span>",
+    hero("Early access", "Introducing Document360 Lotus · Beta", "Docs as code.<br /><span style=\"color:#7f56d9;\">Synced both ways.</span>",
          "Keep your docs in GitHub.<br />Edit them in Document360. Lotus keeps both in sync.", "leads", ML)
   + intro([
         ("p", "You've been exploring Document360 to build a knowledge base your users can rely on."),
@@ -295,7 +297,7 @@ leads = (
           ("Agent-ready setup", "Your coding agent writes the d360.json manifest from a prompt we provide.")])
   + head("How it works", "From your repo to a live knowledge base in four steps", top="52px")
   + steps([
-        ("Choose Lotus", ["Start a project and pick Document360 - Lotus, the docs-as-code path."]),
+        ("Choose Lotus", ["Start a new project and pick Document360 Lotus, the docs-as-code project type."]),
         ("Connect GitHub", ["Authorize GitHub, install the app, and pick any repository and branch.", "Docs in a subfolder work too."]),
         ("Add the manifest", ["Lotus maps folders to categories with a small d360.json file.", "Don't have one? Paste our prompt into Claude Code, Cursor or Codex, or start from a template."]),
         ("Sync and keep working", ["Developers keep committing, writers keep editing, and Lotus syncs both ways."]),
@@ -305,7 +307,7 @@ leads = (
         ("A writer fixes a typo", "Clone the repo or ask a developer", "Edit in Document360, it becomes a commit"),
         ("A developer ships a change", "Someone copies it into the help center", "The article updates on its own"),
         ("Both sides edit one page", "Merge markers nobody can read", "Side by side: keep inbound, yours or both"),
-        ("Review before publishing", "Only developers can open a PR", "Anyone can, from the editor"),
+        ("Review before publishing", "Only developers can open a PR", "Anyone can, with no GitHub account"),
         ("Going live", "Two places to update", "Merge &amp; publish, once"),
     ])
   + closing("Early access opens to a small group first",
@@ -313,20 +315,20 @@ leads = (
 )
 
 cust = (
-    hero("Customer early access", "New for Document360 customers", "Your GitHub sync<br /><span style=\"color:#7f56d9;\">just went two-way.</span>",
-         "Lotus keeps your repo and your knowledge base in sync.<br />Edits here travel back to GitHub too.", "customers", MC)
+    hero("Customer early access", "New for Document360 customers · Beta", "Two-way GitHub sync<br /><span style=\"color:#7f56d9;\">is coming to Document360.</span>",
+         "Document360 Lotus keeps your repo and your docs in sync.<br />Edits in Document360 travel back to GitHub too.", "customers", MC)
   + intro([
         ("p", "Many of you keep developer docs in GitHub and asked us the same thing: can Document360 sync with the repo, both ways?"),
-        ("p", "Our GitHub extension synced one way, from the main branch into Document360."),
+        ("p", "Our GitHub extension syncs one way, from the main branch into Document360."),
         ("quote", "The moment a writer fixed something in Document360, the repo was out of date again."),
-        ("p", "<strong style=\"color:#1a1d33;\">Document360 Lotus</strong> fixes that, and it's coming to your workspace."),
+        ("p", "<strong style=\"color:#1a1d33;\">Document360 Lotus</strong> fixes that: a new docs-as-code project type that syncs with GitHub in both directions."),
         ("p", "As a customer, you get first access."),
     ])
   + head("What you get", "Docs as code, built into the knowledge base you already run", top="16px")
   + grid([("Both directions", "GitHub to Document360 and back, on any branch, with docs in any folder."),
-          ("Your project, your choice", "Connect a repo you have, or push this project into GitHub by choosing the sync direction."),
+          ("Writers need no GitHub account", "Editing, publishing, branches and pull requests follow each person's Document360 role."),
           ("Pull requests from the editor", "Save to branch, open a PR, and Merge &amp; publish in one click."),
-          ("Every commit on record", "The audit log shows pushes, PRs and merges, and credits GitHub contributors.")])
+          ("Publish once", "Every pending change is reviewed in one dialog and goes to GitHub as one commit.")])
   + head("What stays, what changes", "Your editor stays. The copy and paste goes.", top="52px")
   + compare(["The moment", "With the GitHub extension", "With Lotus"], [
         ("Sync direction", "GitHub to Document360 only", "Both ways"),
@@ -342,7 +344,7 @@ cust = (
         ("Your docs stop drifting", ["One source of truth, so the repo and the help center always match."]),
     ], numbered=False)
   + closing("Customers get first access",
-            ["We're opening Lotus to a small group of customers first.", "Your feedback will shape the migration from the GitHub extension."], "customers", MC)
+            ["We're opening Document360 Lotus to a small group of customers first.", "Your GitHub extension keeps working while you try it."], "customers", MC)
 )
 
 files = {
@@ -355,10 +357,10 @@ files = {
     }, leads),
     "lotus-newsletter-existing-customers.html": build({
         "AUDIENCE": "Existing customers",
-        "SUBJECT": "Your GitHub sync just went two-way",
-        "ALTSUBJECT": "Early access for customers: docs as code with Lotus",
+        "SUBJECT": "Two-way GitHub sync is coming to Document360",
+        "ALTSUBJECT": "Early access for customers: Document360 Lotus (Beta)",
         "PREHEADER": "Lotus keeps your GitHub repo and Document360 in sync both ways. Customers get first access.",
-        "TITLE": "Your GitHub sync just went two-way.",
+        "TITLE": "Two-way GitHub sync is coming to Document360.",
     }, cust),
 }
 for name, html in files.items():

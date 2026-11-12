@@ -4,7 +4,7 @@ Lotus launches as a new launch on the Document360 product page, so it inherits t
 
 | Field | Content |
 | --- | --- |
-| Launch name | Document360 Lotus |
+| Launch name | Document360 Lotus (Beta) |
 | Tagline (42 of 60 characters) | Docs as code, synced both ways with GitHub |
 | Description (≤260) | Lotus keeps your docs in a GitHub repo and in Document360, synced both ways. Developers commit Markdown and review in pull requests. Writers edit in the editor. Branch, merge & publish, and resolve conflicts, all in the browser. |
 | Categories | Knowledge base software, Developer tools, GitHub (check exact names in the category picker) |
@@ -23,7 +23,7 @@ Lotus launches as a new launch on the Document360 product page, so it inherits t
 | 5 | Coding-agent prompt | Your coding agent writes the setup |
 | 6 | Pull request ready to merge | Branch, PR, Merge & publish, in the editor |
 | 7 | Review conflicts | Conflicts, resolved like a document |
-| 8 | Audit log | Every commit, on the record |
+| 8 | Publish dialog | Every change, one reviewed commit |
 
 ![Gallery slot 2](img:hero)
 
@@ -53,13 +53,16 @@ Post at 12:02 AM PST, the moment the launch is live. Fill the bracketed facts fi
 > **How hard is setup?**
 > Authorize GitHub, pick any repo and branch, and Lotus checks for a small manifest called d360.json. Don't have one? We give you a prompt for Claude Code, Cursor or Codex, and your agent writes it.
 >
-> **We already use Document360. Can we bring our docs into Git?**
-> Yes. Turn on Git Sync and choose the direction: GitHub to Document360, or Document360 to GitHub.
+> **Do writers need a GitHub account?**
+> No. What they can edit, save and publish follows their Document360 role. Every publish is reviewed in one dialog and goes out as one commit, and if your main branch is protected, Lotus opens a pull request instead.
+>
+> **What about API docs?**
+> Keep your OpenAPI spec in the repo. Lotus generates the API reference from it, inside the same docs tree.
 >
 > **Why now?**
 > More and more docs are written next to code, often by coding agents. Lotus lets that Markdown become a real knowledge base, without leaving the rest of the team behind.
 >
-> Lotus is available today in [early access / plan names]. Join the waitlist from the link above to get in early.
+> Lotus is in Beta today on [plan names]. Join the waitlist from the link above to get in early.
 >
 > Want to see it live? I'm walking through Lotus on [day and time]. Register here: [link]
 >

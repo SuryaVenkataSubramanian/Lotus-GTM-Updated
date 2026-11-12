@@ -15,6 +15,7 @@ for f in sorted(os.listdir(IMG)):
     if f.endswith(".jpg"):
         IMAGES[f[:-4]] = uri(os.path.join(IMG, f), "image/jpeg")
 IMAGES["mascot"] = uri(os.path.join(HERE, "mascot_256.png"), "image/png")
+IMAGES["wordmark"] = uri(os.path.join(HERE, "ads", "logo.png"), "image/png")
 MASCOT_BIG = uri(os.path.join(HERE, "mascot_512.png"), "image/png")
 
 WAITLIST = "https://document360v2.wpengine.com/lotus-waitlist-2/"
@@ -27,17 +28,17 @@ A = [
  ("flow", "Product tour: how Lotus works", "product", "plan", "Internal, sales, video", "Everyone on the launch",
   "Twelve steps through the Lotus design, from choosing Lotus to resolving conflicts, with the message each one proves.", "flow.md", None, None, None, "flow_thumb"),
  ("competitive", "Competitive landscape", "strategy", "plan", "Internal, sales", "Marketing and sales",
-  "Lotus against GitBook, Mintlify, ReadMe, Fern and the current GitHub extension, with five differentiators.", "competitive.md", None, None, None, "conflicts_c"),
+  "Lotus against Mintlify, GitBook, ReadMe and Redocly, from their own docs, with five differentiators.", "competitive.md", None, None, None, "conflicts_c"),
  ("strategy", "Positioning and message house", "strategy", "plan", "Internal", "Marketing team",
   "Positioning statement, message house, audiences in order and the four strategic moves.", "strategy.md", None, None, None, "strategy_thumb"),
  ("landing", "Waitlist landing page", "content", "base", "Website", "All audiences",
-  "The new docs-as-code landing page: hero, how it works, features, extension comparison and FAQ.", "landing.md", "/waitlist-landing-page", "Open the landing page design", None, "landing_thumb"),
+  "The new docs-as-code landing page: hero, how it works, features, extension comparison and FAQ.", "landing.md", "https://claude.ai/artifact/C4mmh1oitDopuMyE27WWme", "Open the landing page design", None, "landing_thumb"),
  ("blog", "SEO blog: docs as code", "content", "base", "Blog, search", "Docs teams, developers, PMs",
   "SEO brief and the full ~1,600-word article with screenshots, checklist and FAQ.", "blog.md", None, None, None, "herobare"),
  ("widgets", "Blog sidebar widgets", "content", "base", "document360.com/blog", "Blog readers",
   "Five 330 px widgets with the Lotus mascot, each with its own tracked waitlist link.", "widgets.md", None, None, None, "widgets_thumb"),
  ("nl-customers", "Newsletter: existing customers", "email", "base", "Email (Ortto)", "Customers",
-  "\u201cYour GitHub sync just went two-way.\u201d Premium HTML email with the new banner.", "nl-customers.md", None, None, "nlcust", "nlcust_thumb"),
+  "\u201cTwo-way GitHub sync is coming to Document360.\u201d Premium HTML email with the new banner.", "nl-customers.md", None, None, "nlcust", "nlcust_thumb"),
  ("community", "Community post", "social", "base", "community.document360.com", "Customers",
   "Two-way GitHub sync announcement that asks members where their docs live today.", "community.md", None, None, None, "gitsync_c"),
  ("ph-prelaunch", "Product Hunt pre-launch plan", "ph", "base", "Product Hunt", "Followers, supporters",
@@ -53,19 +54,19 @@ A = [
  ("brandvideo", "Brand video: repo to article", "video", "warm", "Social, Product Hunt", "Everyone",
   "A Markdown file and manifest, the article they become, and the edit that travels back as a PR.", "brandvideo.md", None, None, None, "hero"),
  ("paid", "Paid social: 20 ads", "social", "warm", "LinkedIn, Facebook, X", "Docs teams and builders",
-  "Twenty descriptions with twenty matching banners, and which to test where.", "paid.md", None, None, None, "herobare"),
+  "Twenty descriptions, twenty matching banners (1200 × 628) ready for the paid team, and which to test where.", "paid.md", None, None, None, "ad06"),
  ("influencers", "Influencer program (25 creators)", "influencers", "warm", "Creators\u2019 channels", "Their audiences",
-  "Four creator groups including DevRel voices, three waves, the brief, starter posts and tracking.", "influencers.md", None, None, None, "prmenu_c"),
+  "Four creator groups, three waves, the brief, tracking, and 25 post drafts for LinkedIn and X.", "influencers.md", None, None, None, "prmenu_c"),
  ("ph-launch", "Product Hunt launch page and maker comment", "ph", "launch", "Product Hunt", "Product Hunt community",
   "Listing, eight-slot gallery, Saravana\u2019s maker comment and the first team replies.", "ph-launch.md", None, None, None, "hero"),
  ("saravana", "Saravana\u2019s launch-day posts", "social", "launch", "LinkedIn, X", "Saravana\u2019s network",
   "A LinkedIn post and a four-part X thread for the hour the launch goes live.", "saravana.md", None, None, None, "merge_c"),
- ("board", "Board members\u2019 LinkedIn posts", "social", "launch", "LinkedIn", "Board networks",
-  "Four angles: founder story, customer demand, docs as code for everyone, the agent era.", "board.md", None, None, None, "audit_c"),
+ ("board", "Leadership LinkedIn posts", "social", "launch", "LinkedIn", "Board networks",
+  "Nine leaders, nine angles: product, data science, support, CEO\u2019s office, services, sales, marketing and growth.", "board.md", None, None, None, "audit_c"),
  ("runofshow", "Launch-day run of show", "ph", "launch", "Product Hunt, all channels", "Whole team",
   "Hour-by-hour plan in PST and IST, with owners and war-room rules.", "runofshow.md", None, None, None, "syncing_c"),
  ("playbook", "Launch playbook: replies, outreach, follow-up", "ph", "after", "Product Hunt, email, social", "Whole team",
-  "Comment reply bank, outreach templates and post-launch steps, including the extension migration.", "playbook.md", None, None, None, "profile_c"),
+  "Comment reply bank, outreach templates and post-launch steps.", "playbook.md", None, None, None, "profile_c"),
 ]
 
 CATS = [("all", "All assets"), ("strategy", "Strategy"), ("product", "Product and in-app"), ("ph", "Product Hunt"),
@@ -117,7 +118,7 @@ chips = "".join(f'<button class="chip" type="button" data-cat-filter="{c}" aria-
 
 PILLARS = [
  ("Two-way sync", "Commit in GitHub or edit in Document360. Any branch, any folder.", "connect_c"),
- ("Git in the browser", "Save to branch, open a pull request, Merge & publish.", "prmenu_c"),
+ ("Git in the editor", "Save to branch, open a pull request, Merge & publish. No GitHub account needed.", "prmenu_c"),
  ("Conflicts made human", "Keep inbound, keep yours, or keep both, side by side.", "conflicts_c"),
  ("Agent-ready setup", "Your coding agent writes d360.json from a prompt.", "agent_c"),
 ]
@@ -138,7 +139,8 @@ a{color:var(--accent)} button{font-family:inherit}
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
 .top .wrap{display:flex;align-items:center;gap:16px;min-height:68px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
 .brand{display:flex;align-items:center;gap:12px;margin-right:auto}
-.brand img{width:40px;height:40px}
+.brand > img{width:40px;height:40px}
+.brand .wm{height:12px;width:auto;vertical-align:-1px}
 .brand b{display:block;font-size:16px;font-weight:800;letter-spacing:-.2px}
 .brand small{display:block;font-size:12.5px;color:var(--muted);font-weight:600}
 .search{position:relative;flex:0 1 320px}
@@ -353,7 +355,7 @@ JS = r"""
   }
   function post(root){
     root.querySelectorAll('table').forEach(function(t){ if(t.parentNode.classList.contains('table-wrap')) return; var w=document.createElement('div'); w.className='table-wrap'; t.parentNode.insertBefore(w,t); w.appendChild(t); });
-    root.querySelectorAll('a[href^="http"],a[href^="/"]').forEach(function(a){ a.target='_blank'; a.rel='noopener'; });
+    root.querySelectorAll('a[href^="http"]').forEach(function(a){ a.target='_blank'; a.rel='noopener'; });
     root.querySelectorAll('p > img[alt]').forEach(function(im){ if(im.closest('.wdg,.pmk')) return; var c=document.createElement('span'); c.className='cap'; c.textContent=im.alt; im.after(c); im.loading='lazy'; });
     fillImgs(root);
   }
@@ -384,7 +386,7 @@ JS = r"""
     function done(ok){ label.textContent=ok?'Copied':'Copy failed, select the text instead'; setTimeout(function(){ label.textContent='Copy text'; },1800); }
     try{ if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function(){done(true);},function(){done(false);}); else done(false); }catch(e){ done(false); }
   });
-  document.addEventListener('click',function(e){ var t=e.target.closest?e.target.closest('[data-open]'):null; if(!t) return; var id=t.getAttribute('data-open'), a=byId[id]; if(a && a.link && a.link.charAt(0)==='/' && !t.closest('dialog')){ window.open(a.link,'_blank','noopener'); return; } openAsset(id); });
+  document.addEventListener('click',function(e){ var t=e.target.closest?e.target.closest('[data-open]'):null; if(t) openAsset(t.getAttribute('data-open')); });
   function fromHash(){ var id=(location.hash||'').replace('#',''); if(id&&byId[id]) openAsset(id,true); else if(!id) closeDlg(); }
   window.addEventListener('hashchange',fromHash);
   apply(); fromHash();
@@ -406,7 +408,7 @@ page = f'''<!DOCTYPE html>
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <div class="brand"><img src="{IMAGES['mascot']}" alt="Lotus mascot"><div><b>Lotus GTM command center</b><small>Document360 · docs as code launch</small></div></div>
+  <div class="brand"><img src="{IMAGES['mascot']}" alt="Lotus mascot"><div><b>Lotus GTM command center</b><small><img class="wm" src="{IMAGES['wordmark']}" alt="Document360"> · docs as code launch</small></div></div>
   <div class="search"><label class="sr" for="q">Search assets</label>
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
     <input id="q" type="search" placeholder="Search assets, channels, audiences" autocomplete="off"></div>
@@ -416,9 +418,9 @@ page = f'''<!DOCTYPE html>
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero-grid">
       <div>
-        <span class="eyebrow"><i></i>Document360 - Lotus · docs as code</span>
+        <span class="eyebrow"><i></i>Document360 Lotus · Beta · docs as code</span>
         <h1 id="hero-title">Docs as code, <em>synced both ways.</em></h1>
-        <p class="lead">Lotus keeps your docs in a GitHub repo and in Document360, in sync in both directions. Every launch asset below tells that story, with visuals built from the Lotus design.</p>
+        <p class="lead">Document360 Lotus keeps your docs in a GitHub repo and in Document360, in sync in both directions. Every asset below follows the latest product requirements, with visuals built from the Lotus design.</p>
         <div class="hero-actions">
           <button class="btn btn-light" type="button" data-open="flow">Take the product tour</button>
           <button class="btn btn-ghost" type="button" data-open="overview">Open the plan at a glance</button>
@@ -438,9 +440,9 @@ page = f'''<!DOCTYPE html>
     <img class="hv" data-img="herobare" alt="A GitHub repository and a Document360 article kept in sync both ways by Lotus">
     <div>
       <span class="tag">What changed</span>
-      <h2 id="changed-title">Lotus is now docs as code</h2>
-      <div class="vs"><div><b>Before</b>Lotus drafted docs from code, for review</div><div class="new"><b>Now</b>Lotus syncs a GitHub repo and Document360, both ways</div></div>
-      <p>Developers commit Markdown and review in pull requests. Writers and PMs edit in Document360. Branches, Merge &amp; publish and conflict resolution all work in the editor.</p>
+      <h2 id="changed-title">Document360 Lotus: docs as code</h2>
+      <div class="vs"><div><b>Today</b>The GitHub extension syncs one way, main branch only</div><div class="new"><b>With Lotus</b>A new project type that syncs GitHub and Document360, both ways</div></div>
+      <p>Developers commit Markdown and review in pull requests. Writers and PMs edit in Document360 with no GitHub account. Every change publishes as one reviewed commit, and conflicts are resolved in the editor.</p>
       <button class="btn btn-light" type="button" data-open="competitive">See the competitive landscape</button>
     </div>
   </section>
@@ -456,7 +458,7 @@ page = f'''<!DOCTYPE html>
   <section class="grid" id="grid">{''.join(cards)}</section>
   <p class="empty" id="empty" hidden>No assets match. Clear the search or pick another filter.</p>
 
-  <footer><img src="{IMAGES['mascot']}" alt="">Screenshots come from the Lotus docs-as-code design. Newsletter HTML files and the new banner image are shared separately in chat.</footer>
+  <footer><img src="{IMAGES['mascot']}" alt=""><img src="{IMAGES['wordmark']}" alt="Document360" style="width:auto;height:16px">Document360 Lotus (Beta). Content follows PRD v0.3.17; screenshots come from the Lotus design.</footer>
 </main>
 
 <dialog id="dlg" aria-labelledby="dlg-title"><div class="dlg">

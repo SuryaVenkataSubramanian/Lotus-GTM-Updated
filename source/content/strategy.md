@@ -1,10 +1,10 @@
 ## The goal
 
-Finish launch day #1 in Knowledge base software on Product Hunt and in the overall top 5, and turn existing Document360 customers into the first wave of Lotus users.
+Finish launch day #1 in Knowledge base software on Product Hunt and in the overall top 5, and make Document360 customers with developer docs the first wave of Lotus users.
 
 ## Positioning
 
-**For** teams whose docs live with their code, **Lotus** is Document360's docs-as-code experience **that** keeps a GitHub repository and Document360 in sync in both directions. **Unlike** docs-as-code tools built only for developers, Lotus gives writers and product managers a full editor, branches and pull requests in the browser, and conflict resolution they can actually use.
+**For** teams whose docs live next to their code, **Document360 Lotus** is the docs-as-code product type of Document360 **that** keeps a GitHub repository and Document360 in sync in both directions. **Unlike** docs-as-code tools built around developers, Lotus lets writers and product managers work in a full editor with no GitHub account, publishes every change in one reviewed commit, and resolves conflicts in plain language.
 
 | Element | What we say |
 | --- | --- |
@@ -13,8 +13,9 @@ Finish launch day #1 in Knowledge base software on Product Hunt and in the overa
 | Product Hunt tagline | Docs as code, synced both ways with GitHub |
 | Core promise | One source of truth, edited by everyone, in the tool they already use |
 | Enemy | Two copies of every doc: Markdown in the repo, a pasted copy in the knowledge base, drifting apart |
-| Differentiator | Conflicts resolved in the browser, agent-ready setup, choose your sync direction, the full Document360 platform |
-| Credibility | Built into Document360: the knowledge base site, Eddy AI, workspaces, localization and analytics teams already use |
+| Differentiators | Writers need no GitHub account · one Publish, one commit · conflicts resolved side by side · agent-ready setup · a full knowledge base around the repo |
+| Credibility | Built on Document360: the knowledge base site, Eddy AI search and chatbot, workspaces and localization teams already use |
+| Status | Beta at launch, GitHub only |
 
 ## Message house
 
@@ -22,22 +23,24 @@ Finish launch day #1 in Knowledge base software on Product Hunt and in the overa
 
 | Pillar | Proof from the product |
 | --- | --- |
-| **Two-way sync** | Commit in GitHub or edit in Document360; any branch, subdirectory support, live Git status |
-| **Git workflows in the browser** | Save to branch, create pull request, Merge & publish, branch-deleted recovery |
-| **Conflicts made human** | Keep inbound, Keep both, Keep yours; mark resolved; article locking |
-| **Agent-ready** | Copy-paste prompts generate or fix `d360.json` and file errors |
-| **Publish with confidence** | Full change list, Eddy AI suggestions, audit log with commit hashes, GitHub credit |
+| **Two-way GitHub sync** | Commit in GitHub or edit in Document360; any branch, docs in a subdirectory, a live Git status pill |
+| **Git in the editor** | Save to branch, create pull request, Merge & publish; protected branches publish through a pull request |
+| **Conflicts made human** | Keep inbound, Keep yours or Keep both, block by block; mark resolved; article locking |
+| **Agent-ready** | A prompt for your coding agent writes d360.json; failed syncs list each file and line with a fix prompt |
+| **Publish once, with confidence** | Every pending change in one reviewed commit; Auto Fix suggests SEO descriptions, tags and related articles; commits credited to the writer's own GitHub account |
+
+**Foundation:** writers need no GitHub account; access comes from their Document360 role.
 
 ## Who we speak to, in order
 
-1. **Existing Document360 customers with developer docs**, especially current GitHub extension users. Message: "Your GitHub sync just became two-way."
+1. **Document360 customers with developer docs**, especially GitHub extension users. Message: "Two-way GitHub sync is here."
 2. **Engineering-led docs teams** that keep Markdown in a repo but need a real knowledge base. Message: "Keep your repo. Get a knowledge base."
-3. **Technical writers and PMs** shut out of docs-as-code. Message: "Edit in an editor. Let Lotus handle the Git."
-4. **Builders using coding agents.** Message: "Your agent already writes Markdown. Lotus publishes it."
+3. **Technical writers and PMs** shut out of docs as code. Message: "Edit in an editor. Lotus handles the Git. No GitHub account needed."
+4. **Builders using coding agents.** Message: "Your agent writes the Markdown. Lotus publishes it."
 
 ## The strategy in four moves
 
-1. **Upgrade the base.** Customers and GitHub extension users hear first, through email, the portal and the community.
+1. **Start with our base.** Customers and GitHub extension users hear first, through email, the portal and the community.
 2. **Prove it on screen.** Lead every channel with the real product: two-way sync, a pull request merged and published, a conflict resolved in seconds.
 3. **Win the day.** Product Hunt launch with Saravana as maker, 25 creators, and the team in the comments all day.
 4. **Own the search term.** "Docs as code" and "GitHub documentation sync" content keeps working after launch.
@@ -52,4 +55,4 @@ Finish launch day #1 in Knowledge base software on Product Hunt and in the overa
 | Product of the Day | Top 5 |
 | Comments, incl. replies | 300+ |
 | Waitlist signups in launch week | 1,000+ |
-| Repositories connected in launch month | 100+ |
+| Lotus projects connected to a repository in launch month | 100+ |

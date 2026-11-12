@@ -1,23 +1,23 @@
 ## What changed
 
-Lotus is no longer an AI writer that drafts docs from code. **Lotus is Document360's docs-as-code experience: your docs live in a GitHub repository and stay in sync with Document360 in both directions.** Developers write Markdown and review with pull requests in GitHub. Writers and product managers edit in the Document360 editor. Every change lands on both sides.
+**Document360 Lotus is Document360's docs-as-code product type: your docs live in a GitHub repository and stay in sync with Document360 in both directions.** Developers write Markdown and review with pull requests in GitHub. Writers and product managers edit in the Document360 editor, with no GitHub account needed. Every change lands on both sides. Lotus launches in **Beta**, as a new project type you choose when you create a project.
 
-![Lotus keeps GitHub and Document360 in sync both ways](img:hero)
+![Document360 ⟷ Lotus ⟷ GitHub](img:hero)
 
-Every asset in this command center has been rewritten for this positioning, and the visuals now come from the Lotus design itself.
+Every asset in this command center follows the latest product requirements (PRD v0.3.17). The visuals come from the Lotus design.
 
 ## The plan in one view
 
 | Item | Plan |
 | --- | --- |
-| Product | Document360 Lotus: docs as code with two-way GitHub sync, branches, pull requests and conflict resolution inside Document360 |
+| Product | Document360 Lotus (Beta): docs as code with two-way GitHub sync, one-click publishing, branches and pull requests, and conflict resolution inside Document360 |
 | One-liner | Your docs in GitHub. Your team in Document360. Always in sync. |
 | Landing page H1 | Docs as code, synced both ways |
-| Audiences | Engineering-led docs teams, technical writers who work alongside developers, product managers; existing Document360 customers first |
+| Audiences | Engineering-led docs teams, technical writers who work alongside developers, product managers; Document360 customers with developer docs first |
 | Launch | Product Hunt, 12:01 AM PST on launch day; maker: Saravana |
 | Primary goal | #1 in Knowledge base software and #1 Product of the Day |
-| Business goal | 1,000+ waitlist signups by launch day, 2,500+ ten days after; 100+ existing customers connect a repository in launch month |
-| The gap we close | Document360's current GitHub extension is one-way (GitHub → Document360) and main-branch only; GitBook's comparison lists Document360's Git sync as "one-way, add-on." Lotus makes it two-way, on any branch, built in |
+| Business goal | 1,000+ waitlist signups by launch day, 2,500+ ten days after; 100+ Lotus projects connected to a repository in launch month |
+| The gap we close | Document360's current GitHub extension syncs one way, from the main branch only. Lotus syncs both ways, on any branch, with pull requests and conflicts handled in the editor |
 
 ## The five phases
 
@@ -41,20 +41,28 @@ Launch as planned if the Document360 Product Hunt page has **600+ followers**, *
 | Product of the Day rank | #1 (top 3 at minimum) |
 | Comments on the launch, incl. replies | 300+ |
 | Waitlist signups | 1,000+ by launch day, 2,500+ ten days after |
-| Repositories connected | 100+ existing customers in launch month |
-| GitHub extension users moved to Lotus | 50% within 60 days |
+| Lotus projects connected to a repository | 100+ in launch month |
+
+## Messaging rules from the PRD
+
+- Name it **Document360 Lotus**, and say **Beta** at launch.
+- Say **GitHub**; Lotus supports GitHub only (no GitLab, Bitbucket or GitHub Enterprise Server yet).
+- Don't claim **Analytics**, custom pages, article templates, the public API, integrations, Find & Replace, recycle bin, archive, scheduled publish or unpublishing for Lotus; they are not in the MVP.
+- Don't promise to **convert an existing Document360 project** into Lotus; Lotus is a new project type, and the one-way extension keeps working for existing projects.
+- Auto Fix suggests **SEO descriptions, tags and related articles** and fills empty fields only.
+- Hold back on headlining **branch preview and share links**, **workspace-specific variables, glossary, tags and labels**, and the **NPM validator** until they are confirmed in the release build.
 
 ## Risks
 
-- **"Two-way sync is table stakes":** GitBook and Mintlify both offer Git-backed editing. Lead with what's different: conflicts resolved in the browser, agent-ready setup, choice of sync direction, and the full Document360 platform on top.
+- **"Two-way sync is table stakes":** GitBook, Mintlify and ReadMe all sync with Git. Lead with what's different: writers need no GitHub account, one-click publishing, conflicts resolved in the browser, agent-ready setup, and a full knowledge base around the repo.
+- **All-or-nothing sync:** one bad commit stops the sync, and publishing pauses for that workspace until it is fixed. Our answer is the file-and-line error list with a fix prompt for the coding agent.
+- **GitHub only:** competitors also support GitLab and more. Prepare a clear roadmap answer.
 - **Follower base too small:** under 600 at go/no-go, move to the backup day.
-- **Sync edge cases in launch week:** keep the sync-failure flow (file-level errors and a fix prompt) in the demo so it reads as a strength, not a surprise.
-- **GitLab and Bitbucket questions:** the design covers GitHub only. Prepare a clear roadmap answer.
 
 ## Open questions
 
-- Plans that include Lotus, and pricing
+- Plans that include Lotus, pricing and the Beta terms
 - GitLab and Bitbucket roadmap answer
-- Migration path and messaging for current GitHub extension users
+- What existing GitHub extension customers should do (new Lotus project, and when)
 - One real Document360 statistic for Saravana's maker comment
 - Webinar time and registration link

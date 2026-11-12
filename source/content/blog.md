@@ -35,7 +35,7 @@ A docs-as-code setup that works for the whole team does five things:
 2. **Brings Git to the browser.** Branches, commits and pull requests without a terminal.
 3. **Makes conflicts readable.** When both sides change the same paragraph, a writer can choose without reading merge markers.
 4. **Fits existing repos.** Any branch, docs in a subdirectory, and a clear way to describe structure.
-5. **Publishes to a real knowledge base.** Search, navigation, localization and analytics, not just a static site.
+5. **Publishes to a real knowledge base.** Search, navigation, AI answers and localization, not just a static site.
 
 ## How Document360 Lotus does docs as code
 
@@ -45,7 +45,7 @@ Lotus is Document360's docs-as-code experience. Your docs live in a GitHub repos
 
 ### Connect a repository in minutes
 
-Choose **Document360 - Lotus** when you create a project, authorize GitHub and install the Document360 GitHub App. Pick any repository and branch; if your docs live in a subdirectory, point Lotus at it. Lotus looks for a `d360.json` manifest that maps folders to categories and files to articles.
+Choose **Document360 Lotus** when you create a project, authorize GitHub and install the Document360 GitHub App. Pick any repository and branch; if your docs live in a subdirectory, point Lotus at it. Lotus looks for a `d360.json` manifest that maps folders to categories and files to articles.
 
 ![Connect with GitHub](img:connect)
 
@@ -71,15 +71,15 @@ When a commit and an edit touch the same article, Lotus shows each conflict side
 
 ### Publish with a safety net
 
-Every publish starts with a full list of what changed: articles, snippets, glossary terms, variables and tags. Eddy AI suggests improvements for GEO/SEO, tags and related articles, with one-click Auto Fix.
+Every publish starts with a full list of what changed: articles, snippets, glossary terms, variables and tags. Auto Fix suggests SEO descriptions, tags and related articles for the pages you changed, and everything goes out in one commit.
 
-### Bring the docs you already have
+### No GitHub account needed for writers
 
-Already have a Document360 knowledge base? Turn on Git Sync and choose the initial direction: GitHub to Document360, or Document360 to GitHub. Your existing articles can become Markdown in a repository in one sync.
+Writers and product managers never need a GitHub account. What they can edit, save, publish or merge follows their Document360 role, and GitHub permissions never grant access in Document360. If the main branch is protected, publishing opens a pull request so your review rules still apply.
 
 ### Every change on the record
 
-Link your GitHub account, and commits you make in GitHub are credited to you in Document360's audit log and as a contributor on the knowledge base site. The audit log records pushes, branches, pull requests and merges, with commit hashes.
+Link your GitHub account, and your Document360 publishes are committed under your own GitHub account, while commits you make in GitHub are credited to you in Document360's audit log and as a contributor on the knowledge base site. The audit log records pushes, branches, pull requests and merges, with the files each one changed.
 
 ## Choosing a docs-as-code platform: a checklist
 
@@ -90,8 +90,8 @@ Link your GitHub account, and commits you make in GitHub are credited to you in 
 | Can non-developers branch and open PRs? | Otherwise writers stay locked out | Yes, from the editor |
 | How are conflicts resolved? | Merge markers stop non-developers cold | Side by side, block by block, in the browser |
 | What happens when sync fails? | Silent failures erode trust | File-level errors with line numbers and a fix prompt |
-| Can you bring existing docs? | Migrations stall launches | Choose the initial sync direction |
-| What do readers get? | Docs are for customers | A full knowledge base with Eddy AI search, localization and analytics |
+| Do writers need a GitHub account? | Accounts and seats block adoption | No. Access follows the Document360 role |
+| What do readers get? | Docs are for customers | A full knowledge base with Eddy AI search, chatbot and localization |
 
 ## Frequently asked questions
 
@@ -108,7 +108,7 @@ A manifest in your repository that maps folders to categories and Markdown files
 The extension syncs one way, from the main branch of GitHub into Document360. Lotus syncs both ways, on any branch, with branches, pull requests and conflict resolution in the editor.
 
 **Does Lotus work with GitLab or Bitbucket?**
-Lotus launches with GitHub. [Confirm roadmap answer before publishing.]
+Lotus launches with GitHub. Other providers are not supported yet.
 
 ## One source of truth, two ways to edit it
 

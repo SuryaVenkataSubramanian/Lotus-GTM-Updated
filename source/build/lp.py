@@ -30,6 +30,11 @@ ICON = {
  "code": '<path d="M8 8l-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"></path>',
  "pen": '<path d="M4 20h4L19 9l-4-4L4 16z"></path><path d="M13.5 6.5l4 4"></path>',
  "chart": '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path>',
+ "lock": '<rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path>',
+ "repo": '<path d="M5 4h11l3 3v13H5z"></path><path d="M9 4v5h6"></path><path d="M9 14h6M9 17h4"></path>',
+ "shield": '<path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="M8.5 12l2.4 2.4L15.5 10"></path>',
+ "layers": '<path d="M12 3l9 5-9 5-9-5z"></path><path d="M3 13l9 5 9-5"></path>',
+ "verify": '<circle cx="12" cy="12" r="9"></circle><path d="M12 7v6M12 16.5v.5"></path>',
 }
 
 def btn(label=CTA, href="#waitlist", size="lg"):
@@ -130,11 +135,11 @@ def build():
 <span style="flex-grow: 1"></span>{btn(size="sm")}
 </header>''')
     # HERO
-    chips = "".join(f'<span style="font-size: 14px; font-weight: 500; color: {N7}; background: #ffffff; border: 1px solid {N2}; border-radius: 999px; padding: 6px 14px">{t}</span>' for t in ["Two-way GitHub sync", "Any branch, any folder", "Pull requests in the editor", "Conflicts resolved in the browser"])
+    chips = "".join(f'<span style="font-size: 14px; font-weight: 500; color: {N7}; background: #ffffff; border: 1px solid {N2}; border-radius: 999px; padding: 6px 14px">{t}</span>' for t in ["Two-way GitHub sync", "Any branch, any folder", "No GitHub account for writers", "Pull requests in the editor", "Conflicts resolved in the browser"])
     out.append(f'''<section style="position: relative; overflow: hidden; background: #ffffff; padding: 88px clamp(20px, 8vw, 120px) 104px">
 <div ref="{{{{ setAsciiHost }}}}" aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 0; height: 760px; overflow: hidden; pointer-events: none"><canvas ref="{{{{ setAsciiCanvas }}}}" aria-hidden="true" style="position: absolute; left: 0; top: 0; display: block; width: 100%; height: 100%"></canvas></div>
 <div style="position: relative; z-index: 1; display: flex; flex-direction: column; gap: 28px">
-{eyebrow("Document360 - Lotus · Docs as code")}
+{eyebrow("Document360 Lotus · Beta · Docs as code")}
 <h1 style="margin: 0; text-align: center; align-self: center; max-width: 1180px; font-size: clamp(40px, 6vw, 72px); line-height: 1.04; font-weight: 700; letter-spacing: -2.4px; color: {N9}">Docs as code, <span style="color: {P}">synced both ways</span></h1>
 <p style="margin: 0; text-align: center; align-self: center; font-size: clamp(19px, 2vw, 24px); line-height: 1.45; font-weight: 500; color: {N7}">Your docs in GitHub. Your team in Document360. Always in sync.</p>
 {form("")}
@@ -146,25 +151,45 @@ def build():
     # PROBLEM
     out.append(section(f'''{shead("The problem", "Most teams keep two copies of every doc", "Developers keep Markdown in the repo. Everyone else keeps a pasted copy in the help center. Every release, the two drift further apart.")}
 <div style="display: flex; flex-wrap: wrap; gap: 24px">
-<div style="flex: 1 1 320px; background: #ffffff; border: 1px solid {N2}; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+<div style="flex: 1 1 320px; background: #ffffff; border: 1px solid {N2}; border-radius: 20px; padding: 32px; box-shadow: 0 1px 2px rgba(24,24,27,.04), 0 18px 40px rgba(76,52,130,.08); display: flex; flex-direction: column; gap: 14px">
 <span style="align-self: flex-start; font-size: 13px; font-weight: 700; color: #a12f2f; background: #fdeeee; border-radius: 999px; padding: 4px 12px">Without Lotus</span>
 <p style="margin: 0; font-size: 24px; line-height: 1.3; font-weight: 600; color: {N9}">Two sources of truth, and neither is right for long</p>
 {"".join(f'<div style="display: flex; gap: 10px; font-size: 16px; line-height: 1.5; color: {N7}"><span style="color: #a12f2f; font-weight: 700">✕</span>{t}</div>' for t in ["Writers can't fix a typo without a developer or a terminal", "Changes in GitHub get copied into the help center by hand", "Edits in the help center never make it back to the repo", "Nobody knows which version is current"])}
 </div>
-<div style="flex: 1 1 320px; background: {P50}; border: 1px solid {P200}; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+<div style="flex: 1 1 320px; background: linear-gradient(180deg, #ffffff 0%, {P50} 100%); border: 1px solid {P200}; border-radius: 20px; padding: 32px; box-shadow: 0 1px 2px rgba(24,24,27,.04), 0 18px 40px rgba(76,52,130,.12); display: flex; flex-direction: column; gap: 14px">
 <span style="align-self: flex-start; font-size: 13px; font-weight: 700; color: #ffffff; background: {P6}; border-radius: 999px; padding: 4px 12px">With Lotus</span>
 <p style="margin: 0; font-size: 24px; line-height: 1.3; font-weight: 600; color: {N9}">One source of truth, two ways to edit it</p>
 {"".join(f'<div style="display: flex; gap: 10px; font-size: 16px; line-height: 1.5; color: {N7}">{check()}<span>{t}</span></div>' for t in ["Developers commit and review in GitHub, like they already do", "Writers and PMs edit in the Document360 editor", "Every change syncs to the other side automatically", "The repo and the knowledge base always match"])}
 </div>
-</div>''', bg=N05))
+</div>''', bg="radial-gradient(#ddd3f5 1px, rgba(0,0,0,0) 1.4px) 0 0 / 24px 24px, linear-gradient(180deg, #faf8ff 0%, #f1ecfc 100%)"))
     # HOW IT WORKS
-    steps = [("01", "Choose Lotus", "Start a project and pick Document360 - Lotus, the docs-as-code path.", "step1_c", "Step 1: choosing Document360 - Lotus"),
+    steps = [("01", "Choose Lotus", "Start a new project and pick Document360 Lotus, the docs-as-code project type.", "step1_c", "Step 1: choosing Document360 Lotus"),
              ("02", "Connect GitHub", "Authorize GitHub, install the app, and pick any repository and branch. Docs in a subfolder work too.", "connect_c", "Connect with GitHub, repository and branch selected"),
              ("03", "Sync and keep working", "Commit in GitHub or edit in Document360. The Git status shows Synced the moment both sides match.", "synced_c", "Document360 editor with the Synced status")]
     cards = "".join(f'''<div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 14px; background: #ffffff; border: 1px solid {N2}; border-radius: 20px; padding: 16px 16px 24px">
 {shot(k, alt, h=180)}
 <div style="display: flex; flex-direction: column; gap: 8px; padding: 4px 8px 0"><span style="font-size: 13px; font-weight: 700; color: {P6}; font-family: 'IBM Plex Mono', monospace">{n}</span><span style="font-size: 20px; font-weight: 600; color: {N9}">{t}</span><span style="font-size: 15px; line-height: 1.55; color: {N5}">{d}</span></div></div>''' for n, t, d, k, alt in steps)
-    out.append(section(f'''{shead("How it works", "From your repo to a live knowledge base in three steps")}<div style="display: flex; flex-wrap: wrap; gap: 20px">{cards}</div>''', idattr='id="how"'))
+    node = lambda n: f'<span style="display: flex; flex-shrink: 0; width: 44px; height: 44px; border-radius: 22px; background: {P6}; color: #ffffff; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; box-shadow: 0 0 0 6px {P100}">{n}</span>'
+    line = f'<span style="flex: 1 1 0; height: 2px; background: repeating-linear-gradient(90deg, {P300} 0 8px, rgba(0,0,0,0) 8px 14px)"></span>'
+    timeline = f'<div aria-hidden="true" style="display: flex; align-items: center; gap: 12px; width: 100%; max-width: 980px; align-self: center; padding: 0 12%; box-sizing: border-box">{node("1")}{line}{node("2")}{line}{node("3")}</div>'
+    out.append(section(f'''{shead("How it works", "From your repo to a live knowledge base in three steps")}{timeline}<div style="display: flex; flex-wrap: wrap; gap: 20px">{cards}</div>''', bg="radial-gradient(50% 60% at 50% 0%, rgba(127,86,217,.10), rgba(127,86,217,0) 70%), #ffffff", idattr='id="how"'))
+    # ENTERPRISE
+    ent = [("lock", "Access by workspace and role", "Content access is set per workspace, and every action follows the person's Document360 role. GitHub permissions never grant access in Document360."),
+           ("repo", "Only the repositories you choose", "The Document360 Lotus GitHub App is installed on the repositories you select, and nothing else."),
+           ("shield", "Your review rules, respected", "Protected branches publish through a pull request, with optional auto-merge once reviews and checks pass."),
+           ("log", "Every Git event on record", "The audit log shows pushes, branches, pull requests, merges and conflicts, filterable by source and workspace, with CSV export."),
+           ("layers", "Workspaces at scale", "Each workspace connects to its own repository, branch and docs folder, so many products can share one setup."),
+           ("verify", "No half-finished imports", "Every sync checks the whole commit first. If anything fails, nothing is imported, and you get each file, line and reason.")]
+    et = "".join(f'<div style="display: flex; flex-direction: column; gap: 14px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: 20px; padding: 28px"><span style="display: flex; width: 44px; height: 44px; border-radius: 12px; background: rgba(255,255,255,.10); align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{ICON[ic]}</svg></span><span style="font-size: 19px; font-weight: 600; color: #ffffff">{h}</span><span style="font-size: 15.5px; line-height: 1.55; color: #d6d0f5">{d}</span></div>' for ic, h, d in ent)
+    out.append(f'''<section id="enterprise" style="position: relative; overflow: hidden; padding: 112px clamp(20px, 8vw, 120px); display: flex; flex-direction: column; gap: 48px; background: radial-gradient(55% 70% at 88% 0%, rgba(236,72,153,.22), rgba(0,0,0,0) 60%), linear-gradient(rgba(255,255,255,.045) 1px, rgba(0,0,0,0) 1px) 0 0 / 40px 40px, linear-gradient(90deg, rgba(255,255,255,.045) 1px, rgba(0,0,0,0) 1px) 0 0 / 40px 40px, linear-gradient(135deg, #0d0824 0%, #1d1170 60%, #2a1ab9 100%)">
+<div style="display: flex; flex-direction: column; gap: 16px; align-items: center">
+<p style="margin: 0; text-align: center; font-size: 14px; font-weight: 600; color: #c4b5fd; letter-spacing: .2px">Enterprise-ready</p>
+<h2 style="margin: 0; text-align: center; max-width: 820px; font-size: clamp(30px, 4vw, 44px); line-height: 1.12; font-weight: 700; letter-spacing: -1.1px; color: #ffffff">Built for teams that run docs at scale</h2>
+<p style="margin: 0; text-align: center; max-width: 720px; font-size: 18px; line-height: 1.6; color: #d6d0f5">Governance, access and review controls that engineering, security and docs leaders expect, from the first sync.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px">{et}</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center">{"".join(f'<span style="font-size: 14px; font-weight: 600; color: #e9e3ff; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); border-radius: 999px; padding: 6px 14px">{t}</span>' for t in ["GitHub", "Two-way sync", "Pull requests", "Audit log", "Role-based access", "Beta"])}</div>
+</section>''')
     # COMPARISON
     rows = [("Sync direction", "GitHub to Document360 only", "Both ways"),
             ("Branches", "Main branch only", "Any branch, plus working branches and pull requests"),
@@ -172,32 +197,35 @@ def build():
             ("Edits in Document360", "Stay in Document360", "Become commits and pull requests"),
             ("Conflicts", "Not handled", "Resolved side by side in the editor")]
     tr = "".join(f'<div style="display: flex; border-top: 1px solid {N2}"><div style="flex: 0 0 28%; padding: 18px 24px; font-size: 16px; font-weight: 600; color: {N9}">{a}</div><div style="flex: 1 1 0; padding: 18px 24px; font-size: 16px; color: {N5}">{b}</div><div style="flex: 1 1 0; padding: 18px 24px; font-size: 16px; font-weight: 600; color: {P7}; background: {P50}">{c}</div></div>' for a, b, c in rows)
-    out.append(section(f'''{shead("For Document360 customers", "Already using our GitHub extension?", "Lotus is the upgrade you asked for: the same knowledge base, now synced with GitHub in both directions.")}
-<div style="width: 100%; max-width: 1000px; align-self: center; border: 1px solid {N2}; border-radius: 20px; overflow-x: auto; background: #ffffff"><div style="min-width: 620px">
-<div style="display: flex"><div style="flex: 0 0 28%; padding: 16px 24px; font-size: 13px; font-weight: 700; color: {N5}">&nbsp;</div><div style="flex: 1 1 0; padding: 16px 24px; font-size: 13px; font-weight: 700; color: {N5}">GitHub extension</div><div style="flex: 1 1 0; padding: 16px 24px; font-size: 13px; font-weight: 700; color: {P6}; background: {P50}">Document360 - Lotus</div></div>
-{tr}</div></div>''', bg=N05))
+    out.append(section(f'''{shead("For Document360 customers", "Already using our GitHub extension?", "Document360 Lotus is the new docs-as-code project type, synced with GitHub in both directions. The one-way extension keeps working for existing projects.")}
+<div style="width: 100%; max-width: 1000px; align-self: center; border: 1px solid {N2}; border-radius: 20px; overflow-x: auto; background: #ffffff; box-shadow: 0 1px 2px rgba(24,24,27,.04), 0 24px 48px rgba(76,52,130,.10)"><div style="min-width: 620px">
+<div style="display: flex"><div style="flex: 0 0 28%; padding: 16px 24px; font-size: 13px; font-weight: 700; color: {N5}">&nbsp;</div><div style="flex: 1 1 0; padding: 16px 24px; font-size: 13px; font-weight: 700; color: {N5}">GitHub extension</div><div style="flex: 1 1 0; padding: 16px 24px; font-size: 13px; font-weight: 700; color: {P6}; background: {P50}">Document360 Lotus</div></div>
+{tr}</div></div>''', bg="radial-gradient(#e2daf6 1px, rgba(0,0,0,0) 1.4px) 0 0 / 24px 24px, linear-gradient(180deg, #f6f3fd 0%, #ffffff 100%)"))
     # TEAMS
     teams = [("code", "Developers", "Keep docs next to the code. Commit Markdown, review in pull requests, and never copy a page into a CMS again."),
-             ("pen", "Technical writers", "Edit in a real editor with branches and pull requests as buttons. Resolve conflicts in plain language."),
-             ("chart", "Product managers", "One source of truth that ships with every release, with a full change list before anything goes live.")]
-    t = "".join(f'<div style="flex: 1 1 280px; display: flex; flex-direction: column; gap: 14px; background: #ffffff; border: 1px solid {N2}; border-radius: 20px; padding: 32px">{icon(ICON[ic])}<span style="font-size: 22px; font-weight: 600; color: {N9}">{n}</span><span style="font-size: 16px; line-height: 1.6; color: {N5}">{d}</span></div>' for ic, n, d in teams)
-    out.append(section(f'''{shead("For teams", "Everyone works in the tool they already use")}<div style="display: flex; flex-wrap: wrap; gap: 20px">{t}</div>''', idattr='id="teams"'))
+             ("pen", "Technical writers", "Edit in a real editor with no GitHub account. Branches and pull requests are buttons, and conflicts are resolved in plain language."),
+             ("chart", "Product managers", "One source of truth that ships with every release, with every change reviewed and published in one commit.")]
+    t = "".join(f'<div style="flex: 1 1 280px; display: flex; flex-direction: column; gap: 14px; background: linear-gradient(180deg, #ffffff 0%, #faf8ff 100%); border: 1px solid {N2}; border-radius: 20px; padding: 32px; box-shadow: 0 1px 2px rgba(24,24,27,.04), 0 18px 40px rgba(76,52,130,.08)">{icon(ICON[ic])}<span style="font-size: 22px; font-weight: 600; color: {N9}">{n}</span><span style="font-size: 16px; line-height: 1.6; color: {N5}">{d}</span></div>' for ic, n, d in teams)
+    out.append(section(f'''{shead("For teams", "Everyone works in the tool they already use")}<div style="display: flex; flex-wrap: wrap; gap: 20px">{t}</div>''', bg="radial-gradient(40% 60% at 0% 100%, rgba(127,86,217,.10), rgba(127,86,217,0) 70%), radial-gradient(40% 60% at 100% 0%, rgba(236,72,153,.08), rgba(236,72,153,0) 70%), #ffffff", idattr='id="teams"'))
     # FAQ
     faqs = [("What is docs as code?", "An approach where documentation lives in a version-controlled repository, is written in plain text such as Markdown, and goes through the same review as code. Lotus brings it to Document360 without locking out non-developers."),
-            ("Do writers need to know Git?", "No. Branching, saving to a branch, opening a pull request and Merge & publish are buttons in the Document360 editor. Lotus handles the Git."),
+            ("Do writers need to know Git, or have a GitHub account?", "No to both. Branching, saving to a branch, opening a pull request and Merge & publish are buttons in the Document360 editor, and what each person can do follows their Document360 role. Lotus handles the Git."),
             ("What is d360.json?", "A small manifest in your repository that maps folders to categories and Markdown files to articles. Your coding agent can write it from a prompt Lotus gives you, or you can start from a template."),
             ("What happens if GitHub and Document360 change the same article?", "Lotus shows each conflict side by side. Keep the version from GitHub, keep yours, or keep both, then mark the article resolved."),
-            ("Can we bring our existing Document360 docs into GitHub?", "Yes. Turn on Git Sync and choose Document360 to GitHub as the initial direction. Your articles become Markdown in the repository, then stay in sync both ways."),
-            ("Which Git providers does Lotus support?", "Lotus launches with GitHub.")]
+            ("How does publishing work?", "Publish reviews every pending change in one dialog and writes it to GitHub as one commit. If your main branch is protected, Lotus opens a pull request instead, so your review rules still apply."),
+            ("Which Git providers does Lotus support?", "Document360 Lotus launches in Beta with GitHub.")]
     fq = "".join(f'<div style="border-top: 1px solid {N2}; padding: 24px 0; display: flex; flex-direction: column; gap: 10px"><h3 style="margin: 0; font-size: 19px; font-weight: 600; color: {N9}">{q}</h3><p style="margin: 0; font-size: 16px; line-height: 1.6; color: {N5}">{a}</p></div>' for q, a in faqs)
-    out.append(section(f'''<div style="display: flex; flex-wrap: wrap; gap: 40px 80px; align-items: flex-start"><div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 14px">{kicker("FAQ")}<h2 style="margin: 0; font-size: 40px; line-height: 1.12; font-weight: 700; letter-spacing: -1px; color: {N9}">Questions, answered</h2><p style="margin: 0; font-size: 17px; line-height: 1.6; color: {N5}">Want the details before early access opens? Here are the ones we hear most.</p></div><div style="flex: 2 1 420px; border-bottom: 1px solid {N2}">{fq}</div></div>''', bg=N05, idattr='id="faq"'))
+    out.append(section(f'''<div style="display: flex; flex-wrap: wrap; gap: 40px 80px; align-items: flex-start"><div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 14px">{kicker("FAQ")}<h2 style="margin: 0; font-size: 40px; line-height: 1.12; font-weight: 700; letter-spacing: -1px; color: {N9}">Questions, answered</h2><p style="margin: 0; font-size: 17px; line-height: 1.6; color: {N5}">Want the details before early access opens? Here are the ones we hear most.</p></div><div style="flex: 2 1 420px; border-bottom: 1px solid {N2}">{fq}</div></div>''', bg="linear-gradient(180deg, #fafafa 0%, #f4f0fd 100%)", idattr='id="faq"'))
     # FINAL CTA
-    out.append(section(f'''<div style="position: relative; border-radius: 32px; padding: clamp(40px, 6vw, 72px) clamp(20px, 5vw, 64px); background: radial-gradient(50% 80% at 50% 0%, rgba(127,86,217,.22), rgba(127,86,217,0) 70%), {P50}; border: 1px solid {P100}; display: flex; flex-direction: column; gap: 22px; align-items: center; overflow: hidden">
+    out.append(f'''<section style="position: relative; overflow: hidden; background: #ffffff; padding: 96px clamp(20px, 8vw, 120px) 112px">
+<div ref="{{{{ setCtaHost }}}}" aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 0; bottom: 0; overflow: hidden; pointer-events: none"><canvas ref="{{{{ setCtaCanvas }}}}" aria-hidden="true" style="position: absolute; left: 0; top: 0; display: block; width: 100%; height: 100%"></canvas></div>
+<div style="position: relative; z-index: 1; max-width: 820px; margin: 0 auto; border-radius: 32px; padding: clamp(40px, 6vw, 72px) clamp(20px, 5vw, 64px); background: rgba(255,255,255,.88); border: 1px solid {P100}; box-shadow: 0 30px 80px rgba(76,52,130,.18); display: flex; flex-direction: column; gap: 22px; align-items: center">
 <img src="{{{{IMG:mascot}}}}" alt="The Lotus mascot" style="width: 120px; height: 120px; filter: drop-shadow(0 14px 24px rgba(127,86,217,.35))">
 <h2 style="margin: 0; text-align: center; font-size: clamp(32px, 4.4vw, 48px); line-height: 1.1; font-weight: 700; letter-spacing: -1.2px; color: {N9}">Your docs in GitHub.<br><span style="color: {P}">Your team in Document360.</span></h2>
 <p style="margin: 0; text-align: center; font-size: 18px; color: {N5}">Join the waitlist and be first to sync your repo both ways.</p>
 {form("2")}
-</div>''', pad="96px clamp(20px, 8vw, 120px) 112px"))
+</div>
+</section>''')
     # FOOTER
     out.append(f'''<footer style="padding: 32px clamp(20px, 8vw, 120px); flex-wrap: wrap; border-top: 1px solid {N2}; display: flex; align-items: center; gap: 12px; font-size: 14px; color: {N5}"><img src="{{{{IMG:wordmark}}}}" alt="Document360" style="display: block; width: 124px; height: 16px"><span>Lotus</span><span style="flex-grow: 1"></span><span>Docs as code, synced both ways</span></footer>''')
     return "".join(out)

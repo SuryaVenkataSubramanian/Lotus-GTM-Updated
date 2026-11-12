@@ -4,7 +4,7 @@ This tour follows the Lotus design end to end. Every screenshot is taken from th
 
 ### 1. Choose how your team writes docs
 
-New projects start with one question. **Document360** is the editor-first path. **Document360 - Lotus** keeps docs in a GitHub repo, synced with Document360: write and review with pull requests, or edit in Document360, and changes flow both ways.
+New projects start with one question: the editor-first Document360 product, or **Document360 Lotus** (Beta), the docs-as-code product type. Lotus keeps docs in a GitHub repo, synced with Document360: write and review with pull requests, or edit in Document360, and changes flow both ways.
 
 ![Step 1: How does your team write docs?](img:step1)
 
@@ -52,7 +52,7 @@ Create a working branch, **Save to branch** (a commit), **Create pull request**,
 
 ### 9. Publish with a full change list and AI suggestions
 
-Before anything goes live, the confirmation lists every changed article, snippet, glossary term and variable. Eddy AI flags improvements (GEO/SEO, tags, related articles) with **Auto Fix**.
+Before anything goes live, the confirmation lists every changed article, snippet, glossary term and variable. **Auto Fix** suggests SEO descriptions, tags and related articles for changed articles; it fills empty fields only, and you review before publishing. Everything goes out in **one commit**.
 
 ![Merge and publish confirmation with suggested improvements](img:merge)
 
@@ -62,17 +62,17 @@ When GitHub and Document360 both change the same article, Lotus shows each confl
 
 ![Review conflicts: Keep inbound, Keep both, Keep yours](img:conflicts)
 
-### 11. Bring an existing Document360 project into Git
+### 11. Publish safely to a protected main branch
 
-Existing projects can turn on Git Sync later and choose the **initial sync direction**: GitHub replaces Document360, or Document360 replaces GitHub. Swap with one click.
+If the tracked branch is protected in GitHub, publishing opens a pull request instead of committing directly, and later publishes add to the same pull request. Teams can choose to publish every change through a pull request, and to merge it automatically once reviews and checks pass. Writers need no GitHub account for any of this: what they can do follows their Document360 role.
 
-![Connect with GitHub: choose the initial sync direction](img:gitsync)
+![Connect with GitHub: repository, branch and d360.json check](img:connect)
 
 ### 12. Every commit is credited and audited
 
-Link your GitHub account in My profile, and changes you make in GitHub are credited to you in the audit log and as a contributor on the knowledge base site. The audit log records pushes, branches, saves, pull requests and merges with commit hashes.
+Link your GitHub account in My profile, and changes you make in GitHub are credited to you in the audit log and as a contributor on the knowledge base site. When a linked writer publishes, the commit is authored by their own GitHub account; otherwise by Document360 Bot. The audit log records Git events (pushes, branches, saves, pull requests and merges) with the files each one changed.
 
-![Audit log with Git events and commit hashes](img:audit)
+![Audit log with Git events](img:audit)
 
 ![My profile: GitHub account linked](img:profile)
 
@@ -84,6 +84,7 @@ Link your GitHub account in My profile, and changes you make in GitHub are credi
 | Save to branch, pull requests, Merge & publish | Git workflows for everyone, without the command line |
 | Review conflicts, block by block | Conflicts resolved in the browser, not in merge markers |
 | Coding-agent prompts for d360.json and sync errors | Agent-ready from the first minute |
-| Initial sync direction | Bring the docs you already have into Git |
-| Publish confirmation with Eddy AI suggestions | Every change reviewed, every page improved |
-| GitHub identity, audit log | Every commit credited, every change on record |
+| Protected branches publish through a pull request | Your review rules are respected |
+| Writers need no GitHub account | Anyone on the team can edit and publish |
+| One Publish, one commit, with Auto Fix | Every change reviewed, every page improved |
+| Commits authored by the writer, audit log | Every commit credited, every change on record |

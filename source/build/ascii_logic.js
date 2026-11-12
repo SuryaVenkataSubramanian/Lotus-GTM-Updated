@@ -5,21 +5,27 @@ this.asciiHost = null;
 this.asciiCanvas = null;
 this.setAsciiHost = (el) => { this.asciiHost = el; };
 this.setAsciiCanvas = (el) => { this.asciiCanvas = el; };
+this.ctaHost = null;
+this.ctaCanvas = null;
+this.setCtaHost = (el) => { this.ctaHost = el; };
+this.setCtaCanvas = (el) => { this.ctaCanvas = el; };
 }
 componentDidMount() {
-try { this.stopAscii = this.startAscii(); } catch (e) { this.stopAscii = null; }
+this.stops = [];
+try { const a = this.startAscii(this.asciiHost, this.asciiCanvas, {}); if (a) this.stops.push(a); } catch (e) {}
+try { const b = this.startAscii(this.ctaHost, this.ctaCanvas, { variation: 3, scale: 1.25, density: 0.7, gradientOpacity: 0.5, glyphOpacity: 0.6 }); if (b) this.stops.push(b); } catch (e) {}
 }
 componentWillUnmount() {
-if (this.stopAscii) this.stopAscii();
+(this.stops || []).forEach((stop) => stop());
 }
 renderVals() {
-return { setAsciiHost: this.setAsciiHost, setAsciiCanvas: this.setAsciiCanvas };
+return { setAsciiHost: this.setAsciiHost, setAsciiCanvas: this.setAsciiCanvas, setCtaHost: this.setCtaHost, setCtaCanvas: this.setCtaCanvas };
 }
-startAscii() {
+startAscii(hostEl, canvasEl, overrides) {
 // Port of React Bits <GradientASCII /> (JS + CSS variant) with the hero settings:
 // colors ["#a855f7","#f6f8ff"], shape "horizon", characters " =+xX0S8#@", cellSize 18, density 0.8, light mode on a white page.
-const container = this.asciiHost;
-const canvas = this.asciiCanvas;
+const container = hostEl;
+const canvas = canvasEl;
 if (!container || !canvas) return null;
 const S = {
 colors: ['#a855f7', '#f6f8ff'], shape: 0, characters: ' =+xX0S8#@', cellSize: 18, density: 0.8,
@@ -27,6 +33,7 @@ glyphOpacity: 0.7, glow: 0.2, depthOfField: 0, flicker: 0.2, softness: 0.5, scal
 gradientOpacity: 0.6, grain: 0.04, variation: 0, mouseInteraction: true, scrambleRadius: 0.1, clickEffect: 1,
 intro: true, lightMode: true, fontFamily: '"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace'
 };
+Object.assign(S, overrides || {});
 const MAX_COLORS = 8, MAX_CLICKS = 4, MAX_TRAIL = 24, CLICK_LIFE = 1.2, TRAIL_LIFE = 0.7, TRAIL_STEP = 0.015, INTRO_SECONDS = 2.4;
 const ATLAS_CELL_W = 60, ATLAS_CELL_H = 100, ATLAS_COLUMNS = 16, FONT_SCALE = 0.78;
 const VERTEX = `#version 300 es

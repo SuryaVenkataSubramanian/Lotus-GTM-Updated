@@ -1,0 +1,66 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;color:#18181b}
+.st{width:1280px;height:720px;position:relative;overflow:hidden;background:radial-gradient(50% 60% at 50% 30%,rgba(127,86,217,.14),transparent 70%),linear-gradient(180deg,#f2eefb,#fafafa);display:none}
+.on{display:block}
+.k{font-size:20px;font-weight:600;color:#6941c6}
+/* house */
+.house{position:absolute;left:90px;right:90px;top:60px;bottom:50px;display:flex;flex-direction:column;align-items:center}
+.roof{position:relative;width:1100px;height:190px}
+.roof svg{position:absolute;inset:0}
+.roof .t{position:absolute;left:0;right:0;top:92px;text-align:center;font-size:34px;font-weight:700;letter-spacing:-.6px}
+.roof .t span{color:#7f56d9}
+.roof img{position:absolute;left:50%;top:-10px;width:86px;height:86px;transform:translateX(-50%);filter:drop-shadow(0 8px 14px rgba(127,86,217,.35))}
+.pillars{display:flex;gap:16px;width:1060px;margin-top:6px}
+.pl{flex:1;background:#fff;border:1px solid #e4e4e7;border-radius:16px;padding:20px 16px;height:260px;display:flex;flex-direction:column;gap:10px;box-shadow:0 8px 24px rgba(76,52,130,.08)}
+.pl i{width:40px;height:40px;border-radius:11px;background:#f2eefb;display:flex;align-items:center;justify-content:center;font-style:normal;color:#6941c6;font-weight:700;font-size:18px}
+.pl b{font-size:19px;line-height:1.25}
+.pl span{font-size:14.5px;line-height:1.45;color:#5f5f69}
+.base{width:1100px;margin-top:14px;background:#4c3482;color:#fff;border-radius:14px;padding:16px 24px;text-align:center;font-size:18px;font-weight:600}
+/* flow */
+.fh{position:absolute;left:64px;top:52px;right:64px;display:flex;align-items:flex-end;justify-content:space-between}
+.fh h2{margin:6px 0 0;font-size:44px;letter-spacing:-1px;line-height:1.05}
+.fh h2 span{color:#7f56d9}
+.fh img{width:110px;height:110px;filter:drop-shadow(0 10px 18px rgba(127,86,217,.35))}
+.tiles{position:absolute;left:64px;right:64px;top:250px;display:flex;gap:44px}
+.tile{flex:1;background:#fff;border:1px solid #e4e4e7;border-radius:18px;padding:12px 12px 16px;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 28px rgba(76,52,130,.10);position:relative}
+.tile img{width:100%;height:170px;object-fit:cover;object-position:top center;border-radius:10px;border:1px solid #f0f0f2}
+.tile .n{font-family:'IBM Plex Mono',monospace;font-size:15px;color:#6941c6;font-weight:600}
+.tile b{font-size:21px}
+.tile span{font-size:15px;color:#5f5f69;line-height:1.4}
+.arr{position:absolute;right:-40px;top:96px;width:36px;height:24px}
+.foot{position:absolute;left:64px;right:64px;bottom:48px;display:flex;gap:12px}
+.chip{font-size:15px;font-weight:600;color:#4c3482;background:#fff;border:1px solid #e5ddf7;border-radius:999px;padding:7px 14px}
+</style></head><body>
+<div class="st" id="house">
+ <div class="house">
+  <div class="roof">
+   <svg viewBox="0 0 1100 190" fill="none"><path d="M20 180 L550 22 L1080 180 Z" fill="#ffffff" stroke="#ccbbf0" stroke-width="3" stroke-linejoin="round"/></svg>
+   <img src="mascot_512.png" alt="">
+   <div class="t">Docs as code that <span>doesn’t leave anyone behind</span></div>
+  </div>
+  <div class="pillars">
+   <div class="pl"><i>⇄</i><b>Two-way GitHub sync</b><span>Commit in GitHub or edit in Document360. Any branch, any folder.</span></div>
+   <div class="pl"><i>⑂</i><b>Git in the editor</b><span>Save to branch, pull request, Merge &amp; publish.</span></div>
+   <div class="pl"><i>✓</i><b>Conflicts made human</b><span>Keep inbound, keep yours, or keep both, side by side.</span></div>
+   <div class="pl"><i>✦</i><b>Agent-ready</b><span>Your coding agent writes d360.json and fixes sync errors.</span></div>
+   <div class="pl"><i>◎</i><b>Publish once</b><span>Every change in one reviewed commit, with Auto Fix.</span></div>
+  </div>
+  <div class="base">Foundation · writers need no GitHub account · built on the Document360 knowledge base</div>
+ </div>
+</div>
+<div class="st" id="flow">
+ <div class="fh"><div><div class="k">Product tour</div><h2>How Lotus works, <span>step by step</span></h2></div><img src="mascot_512.png" alt=""></div>
+ <div class="tiles">
+  <div class="tile"><img src="img/step1_c.jpg" alt=""><div class="n">01</div><b>Choose Lotus</b><span>The docs-as-code path</span>
+   <svg class="arr" viewBox="0 0 36 24" fill="none"><path d="M4 12h28M8 6L2 12l6 6M28 6l6 6-6 6" stroke="#9978e1" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div class="tile"><img src="img/connect_c.jpg" alt=""><div class="n">02</div><b>Connect GitHub</b><span>Any repo, any branch</span>
+   <svg class="arr" viewBox="0 0 36 24" fill="none"><path d="M4 12h28M8 6L2 12l6 6M28 6l6 6-6 6" stroke="#9978e1" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div class="tile"><img src="img/agent_c.jpg" alt=""><div class="n">03</div><b>Add d360.json</b><span>Your agent writes it</span>
+   <svg class="arr" viewBox="0 0 36 24" fill="none"><path d="M4 12h28M8 6L2 12l6 6M28 6l6 6-6 6" stroke="#9978e1" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div class="tile"><img src="img/synced_c.jpg" alt=""><div class="n">04</div><b>Synced both ways</b><span>Edit anywhere</span></div>
+ </div>
+ <div class="foot"><span class="chip">12 screens from the Lotus design</span><span class="chip">Pull requests</span><span class="chip">Conflicts</span><span class="chip">Audit log</span></div>
+</div>
+<script>document.getElementById(location.hash.slice(1)||'house').classList.add('on');</script>
+</body></html>
