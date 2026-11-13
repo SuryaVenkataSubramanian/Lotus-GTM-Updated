@@ -1,6 +1,9 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/waitlist-landing-page", "destination": "/landing", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/waitlist", "destination": "/landing" },
     { "source": "/lotus", "destination": "/landing" }
